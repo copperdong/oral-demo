@@ -1,40 +1,46 @@
 # 口语读读乐
 
-> 刚接触全栈小同学为POPStation线上H5项目做的第一个demo，项目刚刚起步，还没有整合使用vue，myaql。目前初步搭好了koa后台设置路由，基于jquery动效库以及现有动效，结合POPStation需求做了两个演示动效，接下来主要工作是以上线为目标开发H5结构，根据需要使用vue实现交互原型，完成粉丝留言领劵的功能。
+> 口语读读乐是一款练习并评测英语口语的英语小程序。通过AI打分，轻松获取你的口语成绩，口语水平提高就在眼前。
+小程序给用户展示英语句子，引导用户完成读十条随机推荐的英语句子任务，用户逐条读出并综合评分出排名。
+小程序根据用户读出的语音进行AI打分，同时用于可以收听每条英语句子正确的读音与自己刚才的读音。
 
 ## 项目说明
+- 仓库为口语读读乐小程序前端的内容
 
-- UI：暂定
-- 前端框架：Vue（还未整合）
-- 后端框架：Koa
-- 数据库：Mysql（还未加入）
-- 部署：PM2
-
-## 项目相关博客
-
-- [一次前后端分离项目部署实践](https://www.breezymelon.com/2018/06/14/%E4%B8%80%E6%AC%A1%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/)
-
-- [Vue SSR 初探](https://www.breezymelon.com/2018/09/28/Vue-ssr-%E5%88%9D%E6%8E%A2/)
-
-- [Koa——廖雪峰的官方网站](https://www.breezymelon.com/2018/09/28/Vue-ssr-%E5%88%9D%E6%8E%A2/)
+- 前端框架：微信小程序框架
+- （后端框架：Spring GAN）
+- （数据库：Mysql）
 
 ## 安装
 
-`git clone git@github.com:mantianwei/POPStation.git`
+`git clone git@github.com:mantianwei/dudule.git`
 
 ### 配置
 
-`cd POPStation && npm install`
+- 微信开发者工具配置
+
+- 小程序服务器域名配置
+  reques合法域名：https://kouxun.lenovoresearch2019.cn
+  https://kouxunspeak.lenovoresearch2019.cn
+  https://spokenenglishtest.smartedu.lenovo.com
+  uploadFile合法域名：
+  https://kouxun.lenovoresearch2019.cn
+  https://kouxunspeak.lenovoresearch2019.cn
+  https://spokenenglishtest.smartedu.lenovo.com
+
+- 后台登陆配置
+  AppID（小程序ID）  AppSecret（小程序密匙）
 
 ## 运行
+
+微信开发者工具运行项目文件
+
 ## 演示
-目前在本地局域网下演示二维码为show.png
+
+微信小程序搜索“口语读读乐”
 
 ### 前端
 
-在项目根路径下执行 `npm run dev` 打开浏览器 `localhost:8080`
-目前Vue还未整合到项目中
-
-### 后端
-
-在项目根路径下执行 `cd ./ && node app.js` 打开浏览器 `localhost:3000`
+项目前端的主要逻辑页面是records，score两个页面，分别负责英语句子与评分的业务逻辑
+records页面包括进度条组件、英语句子组件、播放声音组件与录音组件，进度条组件用于展示任务进度，英语句子组件针对情景渲染不同颜色的英语单词，播放声音组件用于播放正确读音与用户读音，录音组件用于接收用户的读音。
+score页面中的展示分数组件用于展示用户的分数排名与读句子总数排名。
