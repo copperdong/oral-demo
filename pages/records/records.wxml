@@ -1,0 +1,51 @@
+<!--records.wxml-->
+<view class="wrap" style="position:fixed" >
+  <view wx:if="{{!maskHidden}}" class="mask"></view>
+  <view wx:if="{{!maskHidden}}" class="wrap" style="z-index:30">
+    <view class="Row" style="padding-top:50vh">
+      <text class="infoText" style="margin-right:100rpx">点击此处播放原音</text>
+      <text class="infoText">点击此处播放您的录音</text>
+    </view>
+    <view class="Row" style="margin-top:70vh">
+      <text class="infoText" style="margin-left:220rpx;margin-right:90rpx">长按录音跟读</text>
+      <text class="infoText">登陆并开始练习</text>
+    </view>
+    <button wx:if="{{!maskHidden}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain='true' class="zhiyin">
+      <image class="zhiyin_" src="../images/u0.png"></image>
+    </button>
+  </view>
+    <view class="wrap"  catchtouchstart="touchStart" catchtouchmove="touchMove" catchtouchend="touchEnd">
+      <image class="wrap" src='../images/bg_new.jpg'></image>
+    </view>
+    <view class="Row" style=" padding-top:2vh;">
+      <progress class="progress" percent="{{current_p}}" stroke-width="12" activeColor="#F2F2F2" backgroundColor="rgb(255, 255, 255,0.5)" active="true" active-mode="forwards" />
+      <text>{{array_sort}}/10</text>
+    </view>
+    <view class="nickname" catchtouchstart="touchStart" catchtouchmove="touchMove" catchtouchend="touchEnd">
+    <text  style="padding-right:40rpx;"><text wx:for="{{array}}" wx:key="index" style='color:{{item.color}}'>{{item.content}}</text></text></view>
+
+    <view class="Row" style="width:auto;margin-top:38.5vh;padding-right:50rpx;">
+      <view wx:for="{{Score}}" wx:key="index">
+        <image wx:if="{{!starHidden && index<score_c}}" class="star" src="../images/u127.png"></image>
+      </view>
+      <image wx:if="{{!starHidden && score_b}}" class="star" src="../images/u135.png"></image>
+    </view>
+
+    <view class="Row" style="margin-top:39vh;justify-content: left"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+      <view class="light_m" style="margin-left:57rpx">
+        <button class="bofang" bindtap="handleAI" plain='true'>
+          <image class="bofang_" src="../images/u62.png"></image>
+        </button>
+      </view>
+      <view class="light_m" style="margin-left:320rpx">
+        <button class="shuaxin" bindtap="handleBofang" plain='true' style="z-index:20">
+          <image class="shuaxin_" src="../images/u63.png"></image>
+        </button>
+      </view>
+    </view>
+  <view class="light" style="box-shadow:{{shadow}}">
+    <button class="luyin" hover-class="luyin-hover" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="handleLongPress" bindtap="handleClick" plain='true'>
+      <image class="luyin_" src="../images/ly.png"></image>
+    </button>
+  </view>
+</view>

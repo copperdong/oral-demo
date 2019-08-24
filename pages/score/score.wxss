@@ -1,0 +1,150 @@
+/* pages/records/records.wxss */
+.scrollBox{
+  height: 40vh;
+  display: flex;
+}
+.score_form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.luyin{
+  padding-left: 0;
+}
+.luyin::after {
+  border: none
+}
+.luyin_{
+  width: 200rpx;
+  height: 200rpx;
+}
+button[plain] {
+border:none;
+background-color:transparent;
+}
+
+.tag {
+  margin-top: 6vh;
+  font-size: 3.2vh;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.wrap{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  z-index:-1;
+  align-items:center;
+}
+
+.Row{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.score{
+  z-index: 20;
+  margin-top:27vh;
+  width:80%;
+  height: 45vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+.score_button{
+  border-radius: 55rpx;
+  width: 250rpx;
+  background-color: #FF9966;
+  color: rgb(255, 255, 255);
+  font-size: 2.8vh;
+}
+
+.tab{
+  display: flex;
+  float: left; 
+  height: 6vh;
+  width: 50%;
+  font-size: 2.8vh;
+  text-align: center;
+  align-items: center; 
+  padding: 10rpx 0; 
+  background-color: #FF9966;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+
+  }
+
+.topTabSwiper:after{content: ""; clear: both;display: block;}
+
+.tabBorer{
+  background-color: rgb(255, 255, 255);
+  color: #FF9966;
+  }
+.swiper{
+  width: 100%;
+  }
+
+.medal{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.user{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.star{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.nickName{
+  position: absolute;
+width: 90px;
+overflow: hidden;
+height: 4vh;
+text-align: center;
+font-size: 2.7vh;
+}
+
+.scoreText{
+position: absolute;
+color: white;
+height: 3.6vh;
+font-size: 2.8vh;
+}
+
+.egg{
+  position: absolute;
+  width: 46vh;
+  height: 41vh;
+  margin-top: 2vh;
+}
+
+.score_info{
+  position: absolute;
+  width: 25vh;
+  height: 10vh;
+  margin-top: 27vh;
+}
+
+
+
+
+
+

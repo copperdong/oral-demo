@@ -1,0 +1,123 @@
+/* pages/records/records.wxss */
+.luyin{
+  padding-left: 0;
+}
+.luyin::after {
+  border: none
+}
+.luyin_{
+  width: 200rpx;
+  height: 200rpx;
+}
+button[plain] {
+border:none;
+background-color:transparent;
+}
+
+
+.bofang{
+  padding-left: 0;
+}
+.bofang_{
+  width: 140rpx;
+  height: 140rpx;
+  padding-bottom: 1vh;
+}
+.shuaxin{
+  padding-left: 0;
+}
+.shuaxin_{
+  width: 140rpx;
+  height: 140rpx;
+  padding-bottom: 1vh;
+}
+
+.nickname {
+  margin-top: 21vh;
+  width: 70%;
+  height: 14%;
+  font-size: 2.8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+}
+
+.wrap{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  z-index:-1;
+  align-items:center;
+}
+
+.Row{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.progress{
+  width: 60%;
+border-radius: 100rpx;
+overflow: hidden;
+margin-right: 30rpx;
+
+}
+
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:rgb(0, 0, 0);
+  z-index:10;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+
+.info{
+  margin-top: 25vh;
+}
+
+.light{
+  margin-top: 40vh;
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
+  z-index: 20;
+}
+
+.light_m{
+border-radius: 50%;
+width: 140rpx;
+height: 140rpx;
+z-index: 20;
+}
+
+.infoText{
+  font-size: 2vh;
+  align-items: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.zhiyin{
+  margin-top:80vh;
+  margin-left:550rpx;
+}
+.zhiyin_{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.star{
+  width: 70rpx;
+  height: 70rpx;
+}
+

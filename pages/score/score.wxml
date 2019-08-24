@@ -1,0 +1,66 @@
+<!--records.wxml-->
+<view class="wrap">
+  <image class="wrap" src='../images/bg_score.jpg'></image>
+  <text class="tag">本次成绩</text>
+  <image  class="egg" src="../images/u3.png"></image>
+  <image  class="score_info" src="../images/u286.png"></image>
+  <view  class="Row" style="margin-top:21vh;">
+  <view wx:for="{{Score}}" wx:key="index">
+   <image  wx:if="{{index<(overall+5)/20-1}}" class="star" src="../images/u127.png"></image>
+   </view>
+   <image wx:if="{{overall_d && (overall+5) % 20}}" class="star" src="../images/u135.png"></image>
+  </view>
+
+  <view class="score">
+    <view class='topTabSwiper'>
+      <view class='tab  {{currentData == 0 ? "tabBorer":""}}'data-current="0" bindtap='checkCurrent'>成绩榜</view>
+      <view class='tab  {{currentData == 1 ? "tabBorer":""}}'data-current="1" bindtap='checkCurrent'>勤奋榜</view>
+    </view>
+    <swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+      <swiper-item>
+      <scroll-view class="scrollBox" scroll-y scroll-with-animation="{{true}}">
+      <view class="score_form"><text style="margin-left:410rpx;font-size: 2.8vh">成绩</text></view>
+       <view wx:for="{{score}}" wx:key="index" wx:for-item="item_v" class="score_form" style="height:5vh;padding:18rpx">
+       <image wx:if="{{index==0}}" class="medal" src="../images/u348.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:elif="{{index==1}}" class="medal" src="../images/u350.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:elif="{{index==2}}" class="medal" src="../images/u352.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:else class="medal" src="../images/u330.png" style="position: absolute;margin-left:-232rpx"></image>
+       <text class="scoreText" style="margin-left:-232rpx;color:white;">{{index+1}}</text>
+       <image class="user" src="{{item_v.avatar}}" mode="cover" style="position: absolute;margin-left:-140rpx;border-radius: 50%;"></image>
+       <text class="nickName">{{item_v.nickName}}</text>
+
+<view  class="Row" style="width:auto;margin-left:200rpx">
+       <view wx:for="{{Score}}" wx:key="index">
+   <image  wx:if="{{index<=item_v.c}}" class="star" src="../images/u127.png"></image>
+   </view>
+   <image wx:if="{{item_v.d}}" class="star" src="../images/u135.png"></image>
+  </view>
+
+       </view>
+       </scroll-view>
+      </swiper-item>
+      <swiper-item>
+     <scroll-view class="scrollBox" scroll-y scroll-with-animation="{{true}}">
+      <view class="score_form"><text style="margin-left:410rpx;font-size: 2.8vh">读句子数</text></view>
+       <view wx:for="{{sentence}}" wx:key="index" wx:for-item="item_v" class="score_form" style="height:5vh;padding:18rpx">
+       <image wx:if="{{index==0}}" class="medal" src="../images/u348.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:elif="{{index==1}}" class="medal" src="../images/u350.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:elif="{{index==2}}" class="medal" src="../images/u352.png" style="position: absolute;margin-left:-230rpx;width:80rpx;height:80rpx"></image>
+       <image wx:else class="medal" src="../images/u330.png" style="position: absolute;margin-left:-232rpx"></image>
+       <text class="scoreText" style="margin-left:-232rpx;color:white;">{{index+1}}</text>
+       <image class="user" src="{{item_v.avatar}}" mode="cover" style="position: absolute;margin-left:-140rpx;border-radius: 50%;"></image>
+       <text class="nickName">{{item_v.alias}}</text>
+       <text class="nickName" style="width:auto;margin-left:200rpx">{{item_v.capNum}}</text>
+
+       </view>
+       </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="Row" style="margin-top:87vh">
+  <button class="score_button" style="margin-left: 68rpx" bindtap="handleBack">继续练习</button>
+    <button class="score_button" style="margin-left: 30rpx" open-type="share">分享一下</button>
+  </view>
+
+  <text class="nickname" style="padding-right:40rpx;"><text wx:for="{{array}}" wx:key="index" style='color:{{item.color}}'>{{item.content}}</text></text>
+</view>
